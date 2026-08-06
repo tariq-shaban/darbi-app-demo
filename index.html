@@ -66,8 +66,8 @@
 
         <sc-if value="{{ isDoor }}" hint-placeholder-val="{{ true }}">
           <div style="position:absolute;inset:0;overflow:hidden;background:#120D09">
-            <div style="position:absolute;inset:0;background-image:url(assets/hero_door_open.png);background-size:cover;background-position:center;animation:pushin 6s ease-out forwards"></div>
-            <div style="position:absolute;inset:0;background-image:url(assets/hero_door_closed.png);background-size:cover;background-position:center;animation:reveal 4s ease forwards"></div>
+            <div style="position:absolute;inset:0;background-image:url(assets/hero_door_open.webp);background-size:cover;background-position:center;animation:pushin 6s ease-out forwards"></div>
+            <div style="position:absolute;inset:0;background-image:url(assets/hero_door_closed.webp);background-size:cover;background-position:center;animation:reveal 4s ease forwards"></div>
             <div style="position:absolute;left:0;right:0;bottom:0;padding:24px 22px 30px;background:linear-gradient(to top,rgba(18,13,9,.94),rgba(18,13,9,0));display:flex;flex-direction:column;gap:14px;text-align:center">
               <div dir="rtl" style="font-family:Tajawal,sans-serif;font-size:25px;font-weight:800;color:#F6EFE3">أهلاً بك في دربي</div>
               <div dir="rtl" style="font-family:Tajawal,sans-serif;font-size:13px;line-height:1.6;color:rgba(246,239,227,.72);margin-top:-6px">الباب يفتح على مجلس أهلك. ستة أبواب، وستة من الأهل، ورحلة واحدة.</div>
@@ -117,7 +117,7 @@
 
         <sc-if value="{{ isFamily }}" hint-placeholder-val="{{ false }}">
           <div style="animation:fade .3s ease">
-            <div style="height:190px;background-image:url(assets/hero_majlis_hub.png);background-size:cover;background-position:center 45%"></div>
+            <div style="height:190px;background-image:url(assets/hero_majlis_hub.webp);background-size:cover;background-position:center 45%"></div>
             <div style="padding:16px 16px 24px;display:flex;flex-direction:column;gap:12px">
               <div style="font-size:13px;line-height:1.6;color:rgba(42,33,24,.72)">{{ familyIntro }}</div>
               <div style="display:flex;flex-direction:column;gap:8px">
@@ -200,7 +200,7 @@
         <sc-if value="{{ isDilemma }}" hint-placeholder-val="{{ false }}">
           <div style="animation:fade .28s ease">
             <div style="position:relative;height:250px;display:flex;direction:ltr">
-              <div style="flex:1;background-image:url(assets/dilemma_essa_left.png);background-size:cover;background-position:left center"></div>
+              <div style="flex:1;background-image:url(assets/dilemma_essa_left.webp);background-size:cover;background-position:left center"></div>
               <div style="width:1px;background:linear-gradient(#C9A25E,rgba(201,162,94,.15))"></div>
               <div style="flex:1;background-image:url({{ dRightImg }});background-size:cover;background-position:right center"></div>
               <div style="position:absolute;bottom:10px;left:10px;max-width:46%;padding:9px 12px;border-radius:14px;background:rgba(255,253,248,.82);backdrop-filter:blur(3px);box-shadow:0 4px 12px rgba(42,33,24,.28);font-size:11.5px;line-height:1.45;font-weight:600;color:#7B1E3C;direction:rtl">{{ poleAText }}</div>
@@ -265,7 +265,7 @@
               <div style="width:54px;height:54px;border-radius:50%;background:conic-gradient(#C9A25E {{ ringDeg }}deg,rgba(246,239,227,.18) 0);display:flex;align-items:center;justify-content:center"><div style="width:42px;height:42px;border-radius:50%;background:#7B1E3C;display:flex;align-items:center;justify-content:center;font-size:12.5px;font-weight:800;color:#C9A25E">{{ ringPct }}</div></div>
               <div style="display:flex;flex-direction:column;gap:2px;text-align:end"><div style="font-size:10.5px;opacity:.75">{{ pointsLabel }}</div><div style="font-size:19px;font-weight:800;color:#C9A25E">{{ pointsVal }}</div></div>
             </div>
-            <div style="position:relative;height:250px;margin:0 12px;border-radius:18px;overflow:hidden;background-image:url(assets/hero_majlis_hub.png);background-size:cover;background-position:center 45%">
+            <div style="position:relative;height:250px;margin:0 12px;border-radius:18px;overflow:hidden;background-image:url(assets/hero_majlis_hub.webp);background-size:cover;background-position:center 45%">
               <button onClick="{{ next }}" style="position:absolute;inset:0;border:0;background:transparent;cursor:pointer" title="enter"></button>
             </div>
             <div style="margin:12px;padding:14px 16px;border-radius:18px;background:#FFFDF8;border:1px solid rgba(201,162,94,.35)">
@@ -290,7 +290,7 @@
 
         <sc-if value="{{ isScrolls }}" hint-placeholder-val="{{ false }}">
           <div style="animation:fade .3s ease">
-            <div style="height:180px;background-image:url(assets/hero_path_scrolls.png);background-size:cover;background-position:center 34%"></div>
+            <div style="height:180px;background-image:url(assets/hero_path_scrolls.webp);background-size:cover;background-position:center 34%"></div>
             <div style="margin:-16px 14px 0;padding:10px 16px;border-radius:14px;background:#7B1E3C;color:#C9A25E;text-align:center;font-size:13.5px;font-weight:800;box-shadow:0 8px 18px rgba(0,0,0,.2)">{{ scrollBand }}</div>
             <div style="padding:14px 12px 4px;display:flex;flex-direction:column;gap:10px">
               <input value="{{ query }}" onChange="{{ setQuery }}" placeholder="{{ searchPh }}" style="min-height:44px;padding:0 14px;border-radius:14px;border:1px solid rgba(42,33,24,.14);background:#FFFDF8;font-family:Tajawal,sans-serif;font-size:13.5px;color:#2A2118"/>
@@ -386,7 +386,7 @@
                 </div>
               </div>
               <button onClick="{{ playVideo }}" style="display:flex;align-items:center;gap:12px;padding:12px;border-radius:16px;border:1px solid rgba(42,33,24,.1);background:#FFFDF8;cursor:pointer;font-family:Tajawal,sans-serif;text-align:start">
-                <span style="flex:none;width:64px;height:44px;border-radius:10px;background-image:url(assets/house_marine.png);background-size:cover;background-position:center 40%"></span>
+                <span style="flex:none;width:64px;height:44px;border-radius:10px;background-image:url(assets/house_marine.webp);background-size:cover;background-position:center 40%"></span>
                 <span style="flex:1;font-size:12.5px;font-weight:700;color:#2A2118">{{ hVideo }}</span>
                 <span style="flex:none;width:34px;height:34px;border-radius:50%;background:#7B1E3C;color:#F6EFE3;display:flex;align-items:center;justify-content:center;font-size:12px">▶</span>
               </button>
@@ -421,10 +421,10 @@
 
         <sc-if value="{{ isSaqr }}" hint-placeholder-val="{{ false }}">
           <div style="position:absolute;inset:0;display:flex;flex-direction:column;background:rgba(20,15,10,.55)">
-            <div style="flex:none;height:52px;background-image:url(assets/hero_path_scrolls.png);background-size:cover;background-position:center 34%;opacity:.5"></div>
+            <div style="flex:none;height:52px;background-image:url(assets/hero_path_scrolls.webp);background-size:cover;background-position:center 34%;opacity:.5"></div>
             <div style="flex:1;min-height:0;display:flex;flex-direction:column;border-radius:24px 24px 0 0;background:#F6EFE3;box-shadow:0 -10px 30px rgba(0,0,0,.35);animation:fade .3s ease">
               <div style="flex:none;display:flex;align-items:center;gap:12px;padding:14px 16px;border-bottom:1px solid rgba(42,33,24,.08)">
-                <span style="flex:none;width:52px;height:52px;border-radius:50%;border:2px solid #C9A25E;overflow:hidden;background:#F0E4CC"><span style="display:block;width:100%;height:100%;background-image:url(assets/saqr_avatar.png);background-size:contain;background-position:center;background-repeat:no-repeat"></span></span>
+                <span style="flex:none;width:52px;height:52px;border-radius:50%;border:2px solid #C9A25E;overflow:hidden;background:#F0E4CC"><span style="display:block;width:100%;height:100%;background-image:url(assets/saqr_avatar.webp);background-size:contain;background-position:center;background-repeat:no-repeat"></span></span>
                 <span style="flex:1"><b style="font-size:16px;color:#1E6E68">{{ saqrName }}</b><br/><span style="font-size:11.5px;color:rgba(42,33,24,.6)">{{ saqrRole }}</span></span>
                 <button onClick="{{ closeSaqr }}" style="flex:none;width:36px;height:36px;border-radius:50%;border:0;background:#1E6E68;color:#fff;font-size:15px;cursor:pointer">✕</button>
               </div>
@@ -495,7 +495,7 @@
       </sc-if>
 
       <sc-if value="{{ showSaqrFab }}" hint-placeholder-val="{{ false }}">
-        <button onClick="{{ openSaqr }}" style="position:absolute;inset-inline-end:14px;bottom:130px;width:58px;height:58px;border-radius:50%;border:2px solid #C9A25E;background:#F0E4CC;background-image:url(assets/saqr_avatar.png);background-size:82%;background-position:center 60%;background-repeat:no-repeat;box-shadow:0 10px 24px rgba(0,0,0,.35);cursor:pointer" title="Saqr"></button>
+        <button onClick="{{ openSaqr }}" style="position:absolute;inset-inline-end:14px;bottom:130px;width:58px;height:58px;border-radius:50%;border:2px solid #C9A25E;background:#F0E4CC;background-image:url(assets/saqr_avatar.webp);background-size:82%;background-position:center 60%;background-repeat:no-repeat;box-shadow:0 10px 24px rgba(0,0,0,.35);cursor:pointer" title="Saqr"></button>
       </sc-if>
 
       <sc-if value="{{ toast }}" hint-placeholder-val="{{ false }}">
@@ -698,10 +698,10 @@ const CHAT_OUT = {
      en:'Sorry — that question is outside what I can answer. I am here to help with career paths, education and the job market.'}
 };
 
-const BUST = {R:'assets/bust_R_rashid.png', I:'assets/bust_I_dana.png', A:'assets/bust_A_ghanim.png',
-  S:'assets/bust_S_shafiqah.png', E:'assets/bust_E_essa.png', C:'assets/bust_C_amna.png'};
-const THUMB = {med:'assets/thumb_medical.png', data:'assets/thumb_data.png', marine:'assets/thumb_marine.png',
-  env:'assets/house_env.png', teach:'assets/thumb_teaching.png', biz:'assets/thumb_business.png', sci:'assets/thumb_science_comm.png'};
+const BUST = {R:'assets/bust_R_rashid.webp', I:'assets/bust_I_dana.webp', A:'assets/bust_A_ghanim.webp',
+  S:'assets/bust_S_shafiqah.webp', E:'assets/bust_E_essa.webp', C:'assets/bust_C_amna.webp'};
+const THUMB = {med:'assets/thumb_medical.webp', data:'assets/thumb_data.webp', marine:'assets/thumb_marine.webp',
+  env:'assets/house_env.webp', teach:'assets/thumb_teaching.webp', biz:'assets/thumb_business.webp', sci:'assets/thumb_science_comm.webp'};
 const NOTE = {
   door: {kicker:'Production note', title:'The door opening',
     body:'A cinematic cross-fade from the closed door into the lantern-lit majlis, with a slow push-in. Bilingual welcome shown here; in build, the student picks their language once and the whole app follows.'},
@@ -734,10 +734,10 @@ const NOTE = {
 };
 const HOUSE_POS = {marine:'center 30%', data:'center 28%', med:'center 30%', env:'center 34%',
   teach:'center 28%', biz:'center 30%', sci:'center 32%'};
-const HOUSE_FILE = {med:'assets/house_medical.png', data:'assets/house_data.png', marine:'assets/house_marine.png',
-  env:'assets/house_env.png', teach:'assets/house_teaching.png', biz:'assets/house_business.png', sci:'assets/house_science_comm.png'};
-const STILL_FILE = {R:'assets/still_R_rashid_asking.png', I:'assets/still_I_dana_asking.png', A:'assets/still_A_ghanim_greeting.png',
-  S:'assets/still_S_shafiqah_pleased.png', E:'assets/still_E_essa_pointing.png', C:'assets/still_C_amna_asking.png'};
+const HOUSE_FILE = {med:'assets/house_medical.webp', data:'assets/house_data.webp', marine:'assets/house_marine.webp',
+  env:'assets/house_env.webp', teach:'assets/house_teaching.webp', biz:'assets/house_business.webp', sci:'assets/house_science_comm.webp'};
+const STILL_FILE = {R:'assets/still_R_rashid_asking.webp', I:'assets/still_I_dana_asking.webp', A:'assets/still_A_ghanim_greeting.webp',
+  S:'assets/still_S_shafiqah_pleased.webp', E:'assets/still_E_essa_pointing.webp', C:'assets/still_C_amna_asking.webp'};
 const PHASE = {door:0, setup:0, family:0, item:1, dilemma:1, mosaic:2, hub:2, scrolls:2, house:2, compare:2, saqr:2, path:3, report:4};
 const LOCK = {
   1:{ar:'أكمل التعريف أولاً: الباب ثم صفّك ثم الأهل ثم السؤال التجريبي.',en:'Finish onboarding first: the door, your grade, the family, then the practice item.'},
@@ -1004,7 +1004,7 @@ class Component extends DCLogic {
       dilemmaKicker: L(T.dilemmaKicker), dStem: L(dil.stem),
       dAHead: L(T.aHead), dA: L(dil.a), dBHead: L(T.bHead), dB: L(dil.b),
       poleAText: L(dil.bubbleA), poleBText: L(dil.bubbleB), dScale,
-      dRightImg: st.dIdx===0 ? 'assets/dilemma_dana_right.png' : 'assets/dilemma_shafiqah_right_b.png',
+      dRightImg: st.dIdx===0 ? 'assets/dilemma_dana_right.webp' : 'assets/dilemma_shafiqah_right_b.webp',
 
       mosaicRows: this.mosaic(), mosaicLine: (()=>{
         const top = DOORS.map(d=>({d, v:this.dimVal(d.k)})).filter(x=>x.v>0).sort((a,b)=>b.v-a.v).slice(0,2);
@@ -1012,7 +1012,7 @@ class Component extends DCLogic {
         const names = top.map(x=>L(x.d.dim)).join(ar?' و':' and ');
         return ar ? `أضاءت أبواب أهلك. أقربها إليك: ${names}.` : `Your family doors have lit. Closest to you: ${names}.`;
       })(),
-      badgeImg: 'assets/badge_explore.png',
+      badgeImg: 'assets/badge_explore.webp',
       badgeKicker: L(T.badgeKicker), badgeName: L(T.badgeName), mosaicCta: L(T.mosaicCta),
       embers: Array.from({length:14}).map((_,i)=>({x:(6+i*6.6).toFixed(0), d:(i*0.24).toFixed(2)})),
 
@@ -1057,7 +1057,7 @@ class Component extends DCLogic {
       noResults: this.visibleCareers().length ? '' : L(T.noResults),
       cmpRows, backToList: L(T.backToList),
 
-      houseImg: HOUSE_FILE[car.id] || 'assets/house_marine.png',
+      houseImg: HOUSE_FILE[car.id] || 'assets/house_marine.webp',
       housePos: HOUSE_POS[car.id] || 'center 45%',
       housePending: '',
       hTitle: L(car.title), hFit: (ar?'مدى التوافق ':'Fit ')+car.fit+'%',
@@ -1081,7 +1081,7 @@ class Component extends DCLogic {
       prompts: [{label:L(CHAT_IN.q), pick:()=>this.pushChat('in')},{label:L(CHAT_OUT.q), pick:()=>this.pushChat('out')}],
       requestCounselor: ()=>this.say(T.counselorToast),
 
-      staticImg: s==='report' ? 'assets/report_family_portrait.png' : 'assets/path_timeline_bg.png',
+      staticImg: s==='report' ? 'assets/report_family_portrait.webp' : 'assets/path_timeline_bg.webp',
       staticNote: s==='report' ? L(T.reportNote) : L(T.pathNote),
       staticActions: s==='report'
         ? [{label:L({ar:'التقرير التفاعلي',en:'Interactive report'}), pick:()=>this.say(T.reportToast)},
