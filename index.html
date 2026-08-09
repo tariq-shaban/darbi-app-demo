@@ -7,18 +7,32 @@
 </head>
 <body>
 <x-dc>
-<helmet><meta name="viewport" content="width=device-width,initial-scale=1"><link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&family=Cormorant+Garamond:wght@600;700&display=swap" rel="stylesheet"><style>body{margin:0;background:#17110D;font-family:Tajawal,system-ui,sans-serif;-webkit-font-smoothing:antialiased}a{color:var(--a)}a:hover{color:var(--a2)}*{box-sizing:border-box}@keyframes doorL{0%,12%{transform:translateX(0)}100%{transform:translateX(-104%)}}@keyframes doorR{0%,12%{transform:translateX(0)}100%{transform:translateX(104%)}}@keyframes glow{0%,12%{opacity:0}100%{opacity:1}}@keyframes fade{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:translateY(0)}}@keyframes pop{0%{transform:scale(.4);opacity:0}70%{transform:scale(1.08)}100%{transform:scale(1);opacity:1}}@keyframes ember{0%{transform:translateY(0) scale(.6);opacity:0}20%{opacity:.9}100%{transform:translateY(-260px) scale(.2);opacity:0}}@keyframes wipe{from{clip-path:inset(0 0 0 100%)}to{clip-path:inset(0 0 0 0)}}@keyframes blink{0%,100%{opacity:.25}50%{opacity:1}}@keyframes reveal{0%,30%{opacity:1}70%,100%{opacity:0}}@keyframes pushin{0%{transform:scale(1)}100%{transform:scale(1.09)}}</style></helmet>
+<helmet><meta name="viewport" content="width=device-width,initial-scale=1"><link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&family=Cormorant+Garamond:wght@600;700&display=swap" rel="stylesheet"><style>body{margin:0;background:#17110D;font-family:Tajawal,system-ui,sans-serif;-webkit-font-smoothing:antialiased}a{color:var(--a)}a:hover{color:var(--a2)}*{box-sizing:border-box}[data-country="bh"]{--p:#B01030;--p2:#C8153C;--pd:#4C0716;--p-rgb:176,16,48;--a:#C9A25E;--a2:#E2BE7E;--ad:#7B5B22;--a-rgb:201,162,94}[data-country="kw"]{--p:#0A6B45;--p2:#0D8455;--pd:#053322;--p-rgb:10,107,69;--a:#C9A25E;--a2:#E0BC7C;--ad:#75551F;--a-rgb:201,162,94}[data-country="om"]{--p:#96182B;--p2:#B01F36;--pd:#440A13;--p-rgb:150,24,43;--a:#BE9350;--a2:#DBB273;--ad:#6F5220;--a-rgb:190,147,80}[data-country="qa"]{--p:#7B1E3C;--p2:#93264A;--pd:#4A1224;--p-rgb:123,30,60;--a:#C9A25E;--a2:#E2BE7E;--ad:#7B5B22;--a-rgb:201,162,94}[data-country="sa"]{--p:#0B5D3B;--p2:#0F7549;--pd:#052C1C;--p-rgb:11,93,59;--a:#C9A25E;--a2:#E4C285;--ad:#725220;--a-rgb:201,162,94}[data-country="ae"]{--p:#9E1B22;--p2:#B8242C;--pd:#4A0C10;--p-rgb:158,27,34;--a:#C39C55;--a2:#DFBC7A;--ad:#73541D;--a-rgb:195,156,85}@keyframes doorL{0%,12%{transform:translateX(0)}100%{transform:translateX(-104%)}}@keyframes doorR{0%,12%{transform:translateX(0)}100%{transform:translateX(104%)}}@keyframes glow{0%,12%{opacity:0}100%{opacity:1}}@keyframes fade{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:translateY(0)}}@keyframes pop{0%{transform:scale(.4);opacity:0}70%{transform:scale(1.08)}100%{transform:scale(1);opacity:1}}@keyframes ember{0%{transform:translateY(0) scale(.6);opacity:0}20%{opacity:.9}100%{transform:translateY(-260px) scale(.2);opacity:0}}@keyframes wipe{from{clip-path:inset(0 0 0 100%)}to{clip-path:inset(0 0 0 0)}}@keyframes blink{0%,100%{opacity:.25}50%{opacity:1}}@keyframes reveal{0%,30%{opacity:1}70%,100%{opacity:0}}@keyframes pushin{0%{transform:scale(1)}100%{transform:scale(1.09)}}</style></helmet>
 
-<div style="{{ theme }}min-height:100vh;display:flex;flex-direction:column;align-items:center;gap:18px;padding:28px 18px 44px;background:radial-gradient(120% 70% at 50% 0%,#2A1D16,#17110D 72%)">
+<div data-country="{{ country }}" style="display:flex;flex-direction:column;align-items:center;{{ shell }}">
 
-  <div style="display:flex;flex-direction:column;align-items:center;gap:5px">
-    <div style="font-family:'Cormorant Garamond',serif;font-size:22px;letter-spacing:.3em;color:var(--a);text-transform:uppercase">Darbi</div>
-    <div style="font-size:10.5px;letter-spacing:.14em;color:rgba(246,239,227,.4);text-transform:uppercase">Client app prototype · SOW §4.1 spine · {{ crumb }}</div>
-  </div>
+  <sc-if value="{{ introOn }}" hint-placeholder-val="{{ false }}">
+    <div onClick="{{ introDismiss }}" dir="rtl" style="position:fixed;inset:0;z-index:90;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:26px;padding:38px 30px;text-align:center;background:radial-gradient(120% 70% at 50% 30%,#2A1D16,#0D0907 78%);{{ introFade }}">
+      <div style="width:46px;height:46px;transform:rotate(45deg);border:1px solid rgba(201,162,94,.5);background:rgba(201,162,94,.1)"></div>
+      <div style="display:flex;flex-direction:column;align-items:center;gap:10px">
+        <div style="font-family:'Cormorant Garamond',serif;font-size:34px;letter-spacing:.34em;color:var(--a);text-transform:uppercase;padding-inline-start:.34em">Darbi</div>
+        <div style="font-size:15px;line-height:1.7;color:rgba(246,239,227,.72);max-width:19em">نموذج تجريبي للتطبيق · اعرضه بملء الشاشة</div>
+        <div dir="ltr" style="font-size:12px;letter-spacing:.1em;line-height:1.7;color:rgba(246,239,227,.4);text-transform:uppercase">Client app prototype · phone view</div>
+      </div>
+      <div style="font-size:11.5px;letter-spacing:.08em;color:rgba(246,239,227,.3)">اضغط للمتابعة · Tap to continue</div>
+    </div>
+  </sc-if>
 
-  <div style="position:relative;width:390px;max-width:100%;height:844px;margin-inline-end:326px;border-radius:44px;padding:8px;background:linear-gradient(160deg,#4A3A2C,#100C09 60%);box-shadow:0 34px 70px -18px rgba(0,0,0,.85),0 0 0 1px rgba(var(--a-rgb),.2)">
+  <sc-if value="{{ wide }}" hint-placeholder-val="{{ true }}">
+    <div style="display:flex;flex-direction:column;align-items:center;gap:5px">
+      <div style="font-family:'Cormorant Garamond',serif;font-size:22px;letter-spacing:.3em;color:var(--a);text-transform:uppercase">Darbi</div>
+      <div style="font-size:10.5px;letter-spacing:.14em;color:rgba(246,239,227,.4);text-transform:uppercase">Client app prototype · SOW §4.1 spine · {{ crumb }}</div>
+    </div>
+  </sc-if>
 
-    <sc-if value="{{ noteBody }}" hint-placeholder-val="{{ true }}">
+  <div style="{{ phone }}">
+
+    <sc-if value="{{ noteVisible }}" hint-placeholder-val="{{ true }}">
       <aside dir="ltr" style="position:absolute;top:8px;inset-inline-start:100%;margin-inline-start:26px;width:300px;padding:18px 20px;border-radius:18px;background:rgba(246,239,227,.055);border:1px solid rgba(var(--a-rgb),.28);border-top:3px solid var(--a);display:flex;flex-direction:column;gap:10px;text-align:start">
         <div style="display:flex;align-items:center;gap:8px">
           <span style="width:6px;height:6px;background:var(--a);transform:rotate(45deg)"></span>
@@ -35,7 +49,7 @@
       </aside>
     </sc-if>
 
-    <div dir="{{ dir }}" style="position:relative;width:100%;height:100%;border-radius:37px;overflow:hidden;background:#F6EFE3;display:flex;flex-direction:column;color:#2A2118">
+    <div dir="{{ dir }}" style="position:relative;width:100%;height:100%;border-radius:{{ innerR }};overflow:hidden;background:#F6EFE3;display:flex;flex-direction:column;color:#2A2118">
 
       <sc-if value="{{ chrome }}" hint-placeholder-val="{{ true }}">
         <div style="flex:none;padding:12px 14px 10px;background:#F6EFE3;border-bottom:1px solid rgba(42,33,24,.08);display:flex;align-items:center;gap:10px">
@@ -520,6 +534,7 @@
     </div>
   </div>
 
+  <sc-if value="{{ wide }}" hint-placeholder-val="{{ true }}">
   <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:7px;max-width:560px">
     <sc-for list="{{ jumps }}" as="j" hint-placeholder-count="10">
       <button onClick="{{ j.pick }}" style="min-height:32px;padding:0 12px;border-radius:99px;border:1px solid {{ j.bd }};background:{{ j.bg }};color:{{ j.fg }};font-family:Tajawal,sans-serif;font-size:11px;font-weight:600;cursor:pointer">{{ j.label }}</button>
@@ -529,9 +544,10 @@
     <div style="font-size:11px;letter-spacing:.1em;color:var(--a);text-transform:uppercase">{{ phaseNote }}</div>
     <button onClick="{{ resetAll }}" style="min-height:30px;padding:0 14px;border-radius:99px;border:1px solid rgba(246,239,227,.28);background:transparent;color:rgba(246,239,227,.7);font-family:Tajawal,sans-serif;font-size:11px;cursor:pointer" style-hover="border-color:var(--a);color:#F6EFE3">Restart journey</button>
   </div>
-  <div style="max-width:430px;text-align:center;font-size:11px;line-height:1.65;color:rgba(246,239,227,.38)">Static data, no backend. Arabic is primary; the pill in the header mirrors the whole app to English. Stages unlock in order — Discover, Explore, Plan, Act — and the assessment cannot be re-entered once completed. Dimmed jump chips are locked.</div>
+  </sc-if>
+  <div style="max-width:430px;text-align:center;font-size:11px;line-height:1.65;color:rgba(246,239,227,.38);{{ footVis }}">Static data, no backend. Arabic is primary; the pill in the header mirrors the whole app to English. Stages unlock in order — Discover, Explore, Plan, Act — and the assessment cannot be re-entered once completed. Dimmed jump chips are locked.</div>
 
-  <footer style="max-width:720px;margin-top:26px;padding:20px 24px 8px;border-top:1px solid rgba(246,239,227,.1);display:flex;flex-direction:column;gap:9px;text-align:center">
+  <footer style="max-width:720px;margin-top:26px;padding:20px 24px 8px;border-top:1px solid rgba(246,239,227,.1);display:flex;flex-direction:column;gap:9px;text-align:center;{{ footVis }}">
     <div style="font-size:11.5px;font-weight:600;letter-spacing:.04em;color:rgba(246,239,227,.5)">© 2026 Miraai Assessment Solutions. All rights reserved.</div>
     <div style="font-size:10.5px;line-height:1.75;color:rgba(246,239,227,.3);text-wrap:pretty">The characters, artwork, narrative world and assessment concepts presented here are the property of Miraai Assessment Solutions. This is a demonstration prototype, adaptable to any country and locale: the story, the assessment content, the careers library, the salary and demand data, and the academic pathways can all be changed to suit the country and the client’s requirements. Salary ranges and job prospects shown are indicative only and are not a forecast. Not for distribution without permission.</div>
   </footer>
@@ -548,12 +564,12 @@ const DOORS = [
   {k:'C', c:'#3E5C76', dim:{ar:'تقليدي',en:'Conventional'}, name:{ar:'عمتي آمنة',en:'Ammti Amna'}, role:{ar:'الحافظة',en:'the Keeper'}}
 ];
 const STILL = {
-  R:{img:IM+'03_item_interests.png', pos:'32% 22%'},
-  I:{img:IM+'06_path_scrolls.png', pos:'14% 26%'},
-  A:{img:IM+'06_path_scrolls.png', pos:'88% 24%'},
-  S:{img:IM+'02_Majlis_Screen.png', pos:'34% 40%'},
-  E:{img:IM+'04_item_values_dilemmas.png', pos:'22% 32%'},
-  C:{img:IM+'02_Majlis_Screen.png', pos:'80% 42%'}
+  R:{img:IM+'03_item_interests.webp', pos:'32% 22%'},
+  I:{img:IM+'06_path_scrolls.webp', pos:'14% 26%'},
+  A:{img:IM+'06_path_scrolls.webp', pos:'88% 24%'},
+  S:{img:IM+'02_Majlis_Screen.webp', pos:'34% 40%'},
+  E:{img:IM+'04_item_values_dilemmas.webp', pos:'22% 32%'},
+  C:{img:IM+'02_Majlis_Screen.webp', pos:'80% 42%'}
 };
 const PRACTICE = {dim:'S', kind:'scale',
   bubble:{ar:'هذه تجربة فقط. لا توجد إجابة صحيحة.', en:'Just a practice item. There is no right answer.'},
@@ -604,7 +620,7 @@ const CAREERS = [
    quals:[{ar:'بكالوريوس في علوم الحاسب',en:'BSc in computer science'},{ar:'البرمجة (بايثون)',en:'Programming (Python)'},{ar:'الإحصاء',en:'Statistics'}],
    demand:{ar:'قطاع البيانات من قطاعات رؤية ٢٠٣٠ ذات الأولوية.',en:'Data is a Vision 2030 priority sector.'}},
   {id:'marine', fit:86, sector:{ar:'البيئة والبحث العلمي',en:'Environment & Research'}, pay:'15K – 22K',
-   title:{ar:'باحث بحري',en:'Marine Researcher'}, img:IM+'07_career-house.png',
+   title:{ar:'باحث بحري',en:'Marine Researcher'}, img:IM+'07_career-house.webp',
    why:{ar:'تجمع بين حب البحث والعمل الميداني في البيئة البحرية.',en:'You combine a love of research with fieldwork in the marine environment.'},
    overview:{ar:'يدرس الباحث البحري الحياة البحرية والأنظمة البيئية في المحيطات والبحار لحماية التنوع الحيوي البحري ودعم الاستدامة وحل التحديات البيئية.',en:'Marine researchers study marine life and ocean ecosystems to protect biodiversity, support sustainability and solve environmental challenges.'},
    tasks:[{ar:'جمع عينات من المياه والكائنات البحرية في الميدان.',en:'Collect water and marine-life samples in the field.'},{ar:'تحليل البيانات في المختبر باستخدام أجهزة متخصصة.',en:'Analyse data in the lab with specialised instruments.'},{ar:'مراقبة النظم البيئية وتقييم صحة البيئة البحرية.',en:'Monitor ecosystems and assess marine environmental health.'},{ar:'تطوير تقارير بحثية ونشر النتائج العلمية.',en:'Produce research reports and publish findings.'},{ar:'التعاون مع فرق بحثية وجهات محلية ودولية.',en:'Collaborate with local and international research bodies.'}],
@@ -858,7 +874,7 @@ const ICON = {
 };
 
 class Component extends DCLogic {
-  state = {screen:'door', lang:'ar', grade:'high', country:'qa', itemIdx:-1, dIdx:0, answers:{}, ranks:{}, phase:0,
+  state = {screen:'door', lang:'ar', grade:'high', country:'qa', narrow:false, intro:null, itemIdx:-1, dIdx:0, answers:{}, ranks:{}, phase:0,
     query:'', sector:'all', compare:false, picked:[], careerId:'marine', chat:[], typing:false, toast:null, saved:[]};
 
   L(o){ return o ? (o[this.state.lang] || o.ar) : ''; }
@@ -919,7 +935,30 @@ class Component extends DCLogic {
   }
   say(msg){ clearTimeout(this._t); this.setState({toast:this.L(msg)}); this._t=setTimeout(()=>this.setState({toast:null}),2600); }
   go(s){ this.setState({screen:s, toast:null}); }
-  componentWillUnmount(){ clearTimeout(this._t); clearTimeout(this._c); }
+  componentDidMount(){
+    this._fit = ()=>{
+      const n = window.innerWidth < 780;
+      if(n !== this.state.narrow) this.setState({narrow:n});
+    };
+    this._fit();
+    window.addEventListener('resize', this._fit);
+    if(this.state.narrow){
+      let seen = false;
+      try { seen = localStorage.getItem('darbi_intro_v1') === '1'; } catch(e){}
+      if(!seen){
+        this.setState({intro:'on'});
+        this._i1 = setTimeout(()=>this.dismissIntro(), 3400);
+      }
+    }
+  }
+  dismissIntro(){
+    if(this.state.intro !== 'on') return;
+    clearTimeout(this._i1);
+    try { localStorage.setItem('darbi_intro_v1','1'); } catch(e){}
+    this.setState({intro:'out'});
+    this._i2 = setTimeout(()=>this.setState({intro:null}), 500);
+  }
+  componentWillUnmount(){ clearTimeout(this._t); clearTimeout(this._c); clearTimeout(this._i1); clearTimeout(this._i2); window.removeEventListener('resize', this._fit); }
 
   itemCount(){ return ITEMS.length + DILEMMAS.length; }
   answered(){ return Object.keys(this.state.answers).length; }
@@ -1098,8 +1137,19 @@ class Component extends DCLogic {
         const z = ()=>{ sc.scrollTop = 0; };
         z(); requestAnimationFrame(z); setTimeout(z, 60); setTimeout(z, 260); setTimeout(z, 600);
       },
-      theme: (()=>{ const t = THEME[st.country] || THEME.qa;
-        return '--p:'+t.p+';--p2:'+t.p2+';--pd:'+t.pd+';--p-rgb:'+t.pr+';--a:'+t.a+';--a2:'+t.a2+';--ad:'+t.ad+';--a-rgb:'+t.ar+';'; })(),
+      introOn: !!st.intro,
+      introFade: st.intro === 'out' ? 'opacity:0;transition:opacity .48s ease' : 'opacity:1;transition:opacity .48s ease',
+      introDismiss: ()=>this.dismissIntro(),
+      wide: !st.narrow,
+      footVis: st.narrow ? 'display:none' : '',
+      shell: st.narrow
+        ? 'min-height:100dvh;gap:0;padding:0;background:#000'
+        : 'min-height:100vh;gap:18px;padding:28px 18px 44px;background:radial-gradient(120% 70% at 50% 0%,#2A1D16,#17110D 72%)',
+      phone: st.narrow
+        ? 'position:relative;width:100%;height:100dvh;border-radius:0;padding:0;background:#000'
+        : 'position:relative;width:390px;max-width:100%;height:844px;margin-inline-end:326px;border-radius:44px;padding:8px;background:linear-gradient(160deg,#4A3A2C,#100C09 60%);box-shadow:0 34px 70px -18px rgba(0,0,0,.85),0 0 0 1px rgba(201,162,94,.2)',
+      innerR: st.narrow ? '0' : '37px',
+      country: st.country,
       countryCode: this.ctry().code,
       countryLabel: ar ? 'دولتك' : 'Your country',
       countryNote: ar ? 'تحدد الدولة لهجة الأسئلة، ونطاقات الرواتب، وفرص العمل المعروضة.'
@@ -1110,6 +1160,7 @@ class Component extends DCLogic {
           bg: on?'var(--p)':'#FFFDF8', fg: on?'#F6EFE3':'#2A2118', bd: on?'var(--p)':'rgba(42,33,24,.15)',
           pick:()=>this.setState({country:k})};
       }),
+      noteVisible: !st.narrow && !!(NOTE[s]||{}).body,
       noteKicker: (NOTE[s]||{}).kicker || '', noteTitle: (NOTE[s]||{}).title || '',
       noteBody: (NOTE[s]||{}).body || '', noteExtra: (NOTE[s]||{}).extra || '', noteCost: (NOTE[s]||{}).cost || '',
       doorTitle: L(T.door), doorSub: L(T.doorSub), doorCta: L(T.doorCta), skipLabel: L(T.skip),
